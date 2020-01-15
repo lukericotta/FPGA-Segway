@@ -1,0 +1,16 @@
+Fitter Status : Successful - Mon Dec 10 10:37:01 2018
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : Segway
+Top-level Entity Name : Segway
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 968 / 22,320 ( 4 % )
+    Total combinational functions : 917 / 22,320 ( 4 % )
+    Dedicated logic registers : 391 / 22,320 ( 2 % )
+Total registers : 391
+Total pins : 26 / 154 ( 17 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,45 @@
+I:/ECE551/FinalProject/SegwayModel.sv {2 {vlog -work work -vopt -sv -stats=none I:/ECE551/FinalProject/SegwayModel.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module SegwayModel
+** Warning: I:/ECE551/FinalProject/SegwayModel.sv(141): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+
+Top level modules:
+	SegwayModel
+
+} {} {}} I:/ECE551/FinalProject/SPI_ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/FinalProject/SPI_ADC128S.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} I:/ECE551/FinalProject/Segway_netlist.vg {1 {vlog -work work -vopt -stats=none I:/ECE551/FinalProject/Segway_netlist.vg
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module Segway
+
+Top level modules:
+	Segway
+
+} {} {}} I:/ECE551/FinalProject/ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/FinalProject/ADC128S.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module ADC128S
+
+Top level modules:
+	ADC128S
+
+} {} {}} I:/ECE551/FinalProject/Segway_netlist_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/FinalProject/Segway_netlist_tb.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module Segway_tb
+
+Top level modules:
+	Segway_tb
+
+} {} {}} I:/ECE551/FinalProject/UART_tx.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/FinalProject/UART_tx.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}}

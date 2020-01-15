@@ -1,0 +1,102 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Segway
+Version: N-2017.09-SP5
+Date   : Mon Dec 10 19:48:47 2018
+****************************************
+
+Operating Conditions: NCCOM   Library: tcbn40lpbwptc
+Wire Load Model Mode: segmented
+
+  Startpoint: iiDUT/AZ_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iiDUT/inrt/ptch_int_reg[26]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             TSMC32K_Lowk_Conservative
+                                           tcbn40lpbwptc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iiDUT/AZ_reg[1]/CP (DFCNQD2BWP)                         0.00       0.00 r
+  iiDUT/AZ_reg[1]/Q (DFCNQD2BWP)                          0.17       0.17 r
+  U1945/ZN (XNR3D2BWP)                                    0.18       0.35 f
+  U3203/Z (XOR3D2BWP)                                     0.13       0.49 r
+  U2034/Z (OR2D4BWP)                                      0.05       0.54 r
+  U2037/ZN (ND2D3BWP)                                     0.02       0.56 f
+  U2055/ZN (OAI221XD4BWP)                                 0.05       0.61 r
+  U1936/ZN (NR2XD2BWP)                                    0.03       0.64 f
+  U2058/ZN (OAI32XD4BWP)                                  0.06       0.70 r
+  U1939/ZN (AOI22D4BWP)                                   0.04       0.74 f
+  U1938/Z (OA21D4BWP)                                     0.07       0.80 f
+  U1962/ZN (AOI21D2BWP)                                   0.06       0.86 r
+  U1860/ZN (OAI22D2BWP)                                   0.05       0.91 f
+  U1839/ZN (AOI211XD2BWP)                                 0.06       0.98 r
+  U3222/ZN (OAI221XD4BWP)                                 0.04       1.02 f
+  U1854/ZN (ND2D3BWP)                                     0.03       1.04 r
+  U3233/ZN (AOI21D4BWP)                                   0.02       1.07 f
+  U1849/ZN (AOI211XD2BWP)                                 0.03       1.10 r
+  U1903/ZN (AOI211XD2BWP)                                 0.04       1.14 f
+  U3243/ZN (OAI21D4BWP)                                   0.04       1.19 r
+  U1859/ZN (ND3D3BWP)                                     0.04       1.22 f
+  U3042/ZN (AOI22D2BWP)                                   0.05       1.27 r
+  U3246/ZN (IAO21D2BWP)                                   0.03       1.30 f
+  U1837/ZN (CKND4BWP)                                     0.02       1.32 r
+  U3255/ZN (AOI22D4BWP)                                   0.02       1.34 f
+  U3041/CON (FCICOND2BWP)                                 0.12       1.46 r
+  U1861/ZN (IOA21D2BWP)                                   0.03       1.49 f
+  U1852/ZN (ND2D4BWP)                                     0.03       1.52 r
+  U1843/ZN (ND2D3BWP)                                     0.03       1.54 f
+  U1823/ZN (ND2D4BWP)                                     0.03       1.57 r
+  U3293/ZN (AOI22D4BWP)                                   0.03       1.60 f
+  U1937/ZN (CKND4BWP)                                     0.02       1.62 r
+  U2079/ZN (OAI21D4BWP)                                   0.03       1.65 f
+  U1856/ZN (CKND2D4BWP)                                   0.03       1.68 r
+  U1919/ZN (ND2D3BWP)                                     0.03       1.70 f
+  U1988/ZN (ND2D4BWP)                                     0.02       1.73 r
+  U1987/ZN (OAI21D4BWP)                                   0.03       1.76 f
+  U1986/ZN (ND2D4BWP)                                     0.03       1.78 r
+  U1983/ZN (CKND2D4BWP)                                   0.02       1.81 f
+  U1982/ZN (ND2D4BWP)                                     0.02       1.83 r
+  U2046/ZN (ND2D3BWP)                                     0.02       1.85 f
+  U2043/ZN (ND2D3BWP)                                     0.02       1.88 r
+  U2045/ZN (CKND2D4BWP)                                   0.02       1.90 f
+  U2049/ZN (ND2D4BWP)                                     0.02       1.92 r
+  U2039/ZN (ND2D3BWP)                                     0.02       1.95 f
+  U2040/ZN (ND2D3BWP)                                     0.02       1.97 r
+  U2042/ZN (CKND2D3BWP)                                   0.02       1.99 f
+  U2541/ZN (ND2D3BWP)                                     0.02       2.01 r
+  U1985/Z (OA21D4BWP)                                     0.05       2.06 r
+  U1984/Z (AO21D4BWP)                                     0.04       2.10 r
+  U1981/ZN (IAO21D4BWP)                                   0.01       2.12 f
+  U3318/Z (AO21D2BWP)                                     0.08       2.20 f
+  U1980/Z (XOR3D4BWP)                                     0.07       2.27 r
+  U1979/Z (MUX2D2BWP)                                     0.05       2.32 r
+  iiDUT/inrt/ptch_int_reg[26]/D (DFCNQD2BWP)              0.00       2.32 r
+  data arrival time                                                  2.32
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.15       2.35
+  iiDUT/inrt/ptch_int_reg[26]/CP (DFCNQD2BWP)             0.00       2.35 r
+  library setup time                                     -0.03       2.32
+  data required time                                                 2.32
+  --------------------------------------------------------------------------
+  data required time                                                 2.32
+  data arrival time                                                 -2.32
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

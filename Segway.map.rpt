@@ -1,0 +1,775 @@
+Analysis & Synthesis report for Segway
+Mon Dec 10 10:36:33 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Segway|steer_en:sesDUT|state
+  9. State Machine - |Segway|inert_intf:iiDUT|state
+ 10. State Machine - |Segway|inert_intf:iiDUT|SPI_mstr16:spi|state
+ 11. State Machine - |Segway|A2D_Intf:A2DiDUT|state
+ 12. State Machine - |Segway|A2D_Intf:A2DiDUT|SPI_mstr16:spi|state
+ 13. State Machine - |Segway|Auth_blk:abDUT|state
+ 14. State Machine - |Segway|Auth_blk:abDUT|UART_rcv:RCV|state
+ 15. Registers Removed During Synthesis
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Parameter Settings for User Entity Instance: steer_en:sesDUT
+ 20. Parameter Settings for User Entity Instance: balance_cntrl:bcDUT
+ 21. Parameter Settings for Inferred Entity Instance: inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0
+ 22. lpm_mult Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "inert_intf:iiDUT|SPI_mstr16:spi"
+ 24. Port Connectivity Checks: "A2D_Intf:A2DiDUT|SPI_mstr16:spi"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 10 10:36:32 2018       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; Segway                                      ;
+; Top-level Entity Name              ; Segway                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,015                                       ;
+;     Total combinational functions  ; 916                                         ;
+;     Dedicated logic registers      ; 391                                         ;
+; Total registers                    ; 391                                         ;
+; Total pins                         ; 26                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; Segway             ; Segway             ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                                                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; SPI_mstr16.sv                    ; yes             ; User SystemVerilog HDL File        ; I:/ECE551/FinalProject/SPI_mstr16.sv                                                                                                                        ;         ;
+; Segway.v                         ; yes             ; User Verilog HDL File              ; I:/ECE551/FinalProject/Segway.v                                                                                                                             ;         ;
+; balance_cntrl.sv                 ; yes             ; User SystemVerilog HDL File        ; I:/ECE551/FinalProject/balance_cntrl.sv                                                                                                                     ;         ;
+; auth_blk.sv                      ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/auth_blk.sv                                                                                                                          ;         ;
+; uart_rcv.sv                      ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/uart_rcv.sv                                                                                                                          ;         ;
+; a2d_intf.sv                      ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/a2d_intf.sv                                                                                                                          ;         ;
+; inert_intf.sv                    ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/inert_intf.sv                                                                                                                        ;         ;
+; inertial_integrator.sv           ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/inertial_integrator.sv                                                                                                               ;         ;
+; steer_en.sv                      ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/steer_en.sv                                                                                                                          ;         ;
+; mtr_drv.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/mtr_drv.sv                                                                                                                           ;         ;
+; pwm11.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/pwm11.sv                                                                                                                             ;         ;
+; piezo.sv                         ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/piezo.sv                                                                                                                             ;         ;
+; rst_synch.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ECE551/FinalProject/rst_synch.sv                                                                                                                         ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/aglobal160.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_ekh.tdf               ; yes             ; Auto-Generated Megafunction        ; I:/ECE551/FinalProject/db/add_sub_ekh.tdf                                                                                                                   ;         ;
+; db/add_sub_k9h.tdf               ; yes             ; Auto-Generated Megafunction        ; I:/ECE551/FinalProject/db/add_sub_k9h.tdf                                                                                                                   ;         ;
+; db/add_sub_ikh.tdf               ; yes             ; Auto-Generated Megafunction        ; I:/ECE551/FinalProject/db/add_sub_ikh.tdf                                                                                                                   ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                       ; c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 1,015     ;
+;                                             ;           ;
+; Total combinational functions               ; 916       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 255       ;
+;     -- 3 input functions                    ; 409       ;
+;     -- <=2 input functions                  ; 252       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 448       ;
+;     -- arithmetic mode                      ; 468       ;
+;                                             ;           ;
+; Total registers                             ; 391       ;
+;     -- Dedicated logic registers            ; 391       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 26        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 391       ;
+; Total fan-out                               ; 4134      ;
+; Average fan-out                             ; 3.04      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                              ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                      ; Entity Name         ; Library Name ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Segway                                              ; 916 (26)          ; 391 (1)      ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |Segway                                                                                                                                                                  ; Segway              ; work         ;
+;    |A2D_Intf:A2DiDUT|                                ; 55 (13)           ; 65 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|A2D_Intf:A2DiDUT                                                                                                                                                 ; A2D_Intf            ; work         ;
+;       |SPI_mstr16:spi|                               ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|A2D_Intf:A2DiDUT|SPI_mstr16:spi                                                                                                                                  ; SPI_mstr16          ; work         ;
+;    |Auth_blk:abDUT|                                  ; 74 (9)            ; 31 (2)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|Auth_blk:abDUT                                                                                                                                                   ; Auth_blk            ; work         ;
+;       |UART_rcv:RCV|                                 ; 65 (65)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|Auth_blk:abDUT|UART_rcv:RCV                                                                                                                                      ; UART_rcv            ; work         ;
+;    |balance_cntrl:bcDUT|                             ; 368 (368)         ; 136 (136)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|balance_cntrl:bcDUT                                                                                                                                              ; balance_cntrl       ; work         ;
+;    |inert_intf:iiDUT|                                ; 244 (17)          ; 102 (43)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT                                                                                                                                                 ; inert_intf          ; work         ;
+;       |SPI_mstr16:spi|                               ; 49 (49)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|SPI_mstr16:spi                                                                                                                                  ; SPI_mstr16          ; work         ;
+;       |inertial_integrator:inrt|                     ; 178 (88)          ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt                                                                                                                        ; inertial_integrator ; work         ;
+;          |lpm_mult:Mult0|                            ; 90 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0                                                                                                         ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                     ; 90 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core                                                                                      ; multcore            ; work         ;
+;                |mpar_add:padder|                     ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; lpm_add_sub         ; work         ;
+;                      |add_sub_k9h:auto_generated|    ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_k9h:auto_generated                      ; add_sub_k9h         ; work         ;
+;                   |lpm_add_sub:adder[1]|             ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                                                 ; lpm_add_sub         ; work         ;
+;                      |add_sub_ekh:auto_generated|    ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_ekh:auto_generated                      ; add_sub_ekh         ; work         ;
+;                   |mpar_add:sub_par_add|             ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; mpar_add            ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                         |add_sub_ikh:auto_generated| ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ikh:auto_generated ; add_sub_ikh         ; work         ;
+;    |mtr_drv:mdDUT|                                   ; 32 (4)            ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|mtr_drv:mdDUT                                                                                                                                                    ; mtr_drv             ; work         ;
+;       |PWM11:leftHB|                                 ; 12 (12)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|mtr_drv:mdDUT|PWM11:leftHB                                                                                                                                       ; PWM11               ; work         ;
+;       |PWM11:rightHB|                                ; 16 (16)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|mtr_drv:mdDUT|PWM11:rightHB                                                                                                                                      ; PWM11               ; work         ;
+;    |piezo:pDUT|                                      ; 32 (32)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|piezo:pDUT                                                                                                                                                       ; piezo               ; work         ;
+;    |rst_synch:iRST|                                  ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|rst_synch:iRST                                                                                                                                                   ; rst_synch           ; work         ;
+;    |steer_en:sesDUT|                                 ; 85 (85)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Segway|steer_en:sesDUT                                                                                                                                                  ; steer_en            ; work         ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |Segway|steer_en:sesDUT|state             ;
++----------------+------------+----------------+------------+
+; Name           ; state.IDLE ; state.STEER_EN ; state.WAIT ;
++----------------+------------+----------------+------------+
+; state.IDLE     ; 0          ; 0              ; 0          ;
+; state.WAIT     ; 1          ; 0              ; 1          ;
+; state.STEER_EN ; 1          ; 1              ; 0          ;
++----------------+------------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Segway|inert_intf:iiDUT|state                                                                                          ;
++-----------------+-----------+----------+----------+-----------------+-------------+-------------+-------------+-------------+-----------+
+; Name            ; state.AZL ; state.pH ; state.pL ; state.CHECK_INT ; state.INIT4 ; state.INIT3 ; state.INIT2 ; state.INIT1 ; state.AZH ;
++-----------------+-----------+----------+----------+-----------------+-------------+-------------+-------------+-------------+-----------+
+; state.INIT1     ; 0         ; 0        ; 0        ; 0               ; 0           ; 0           ; 0           ; 0           ; 0         ;
+; state.INIT2     ; 0         ; 0        ; 0        ; 0               ; 0           ; 0           ; 1           ; 1           ; 0         ;
+; state.INIT3     ; 0         ; 0        ; 0        ; 0               ; 0           ; 1           ; 0           ; 1           ; 0         ;
+; state.INIT4     ; 0         ; 0        ; 0        ; 0               ; 1           ; 0           ; 0           ; 1           ; 0         ;
+; state.CHECK_INT ; 0         ; 0        ; 0        ; 1               ; 0           ; 0           ; 0           ; 1           ; 0         ;
+; state.pL        ; 0         ; 0        ; 1        ; 0               ; 0           ; 0           ; 0           ; 1           ; 0         ;
+; state.pH        ; 0         ; 1        ; 0        ; 0               ; 0           ; 0           ; 0           ; 1           ; 0         ;
+; state.AZL       ; 1         ; 0        ; 0        ; 0               ; 0           ; 0           ; 0           ; 1           ; 0         ;
+; state.AZH       ; 0         ; 0        ; 0        ; 0               ; 0           ; 0           ; 0           ; 1           ; 1         ;
++-----------------+-----------+----------+----------+-----------------+-------------+-------------+-------------+-------------+-----------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |Segway|inert_intf:iiDUT|SPI_mstr16:spi|state ;
++-------------+-----------+----------+-------------+------------+
+; Name        ; state.END ; state.GO ; state.START ; state.IDLE ;
++-------------+-----------+----------+-------------+------------+
+; state.IDLE  ; 0         ; 0        ; 0           ; 0          ;
+; state.START ; 0         ; 0        ; 1           ; 1          ;
+; state.GO    ; 0         ; 1        ; 0           ; 1          ;
+; state.END   ; 1         ; 0        ; 0           ; 1          ;
++-------------+-----------+----------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |Segway|A2D_Intf:A2DiDUT|state                                                  ;
++-----------------------+-------------------+----------------+-----------------------+------------+
+; Name                  ; state.READ_RESULT ; state.DEAD_CLK ; state.CHANNEL_CONVERT ; state.IDLE ;
++-----------------------+-------------------+----------------+-----------------------+------------+
+; state.IDLE            ; 0                 ; 0              ; 0                     ; 0          ;
+; state.CHANNEL_CONVERT ; 0                 ; 0              ; 1                     ; 1          ;
+; state.DEAD_CLK        ; 0                 ; 1              ; 0                     ; 1          ;
+; state.READ_RESULT     ; 1                 ; 0              ; 0                     ; 1          ;
++-----------------------+-------------------+----------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------+
+; State Machine - |Segway|A2D_Intf:A2DiDUT|SPI_mstr16:spi|state ;
++-------------+-----------+----------+-------------+------------+
+; Name        ; state.END ; state.GO ; state.START ; state.IDLE ;
++-------------+-----------+----------+-------------+------------+
+; state.IDLE  ; 0         ; 0        ; 0           ; 0          ;
+; state.START ; 0         ; 0        ; 1           ; 1          ;
+; state.GO    ; 0         ; 1        ; 0           ; 1          ;
+; state.END   ; 1         ; 0        ; 0           ; 1          ;
++-------------+-----------+----------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------+
+; State Machine - |Segway|Auth_blk:abDUT|state     ;
++------------+-----------+------------+------------+
+; Name       ; state.OFF ; state.PWR2 ; state.PWR1 ;
++------------+-----------+------------+------------+
+; state.OFF  ; 0         ; 0          ; 0          ;
+; state.PWR1 ; 1         ; 0          ; 1          ;
+; state.PWR2 ; 1         ; 1          ; 0          ;
++------------+-----------+------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |Segway|Auth_blk:abDUT|UART_rcv:RCV|state ;
++---------------+-------------------------------------------+
+; Name          ; state.RECEIVE                             ;
++---------------+-------------------------------------------+
+; state.IDLE    ; 0                                         ;
+; state.RECEIVE ; 1                                         ;
++---------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------+----------------------------------------------------+
+; Register name                           ; Reason for Removal                                 ;
++-----------------------------------------+----------------------------------------------------+
+; balance_cntrl:bcDUT|ptch_P_term_ff[0]   ; Stuck at GND due to stuck port data_in             ;
+; balance_cntrl:bcDUT|ptch_D_term_ff[0,1] ; Stuck at GND due to stuck port data_in             ;
+; A2D_Intf:A2DiDUT|cmd_ff[0..10,12,14,15] ; Stuck at GND due to stuck port data_in             ;
+; balance_cntrl:bcDUT|ptch_D_term_ff[12]  ; Merged with balance_cntrl:bcDUT|ptch_D_term_ff[11] ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[10]   ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[10]   ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[9]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[9]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[8]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[8]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[7]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[7]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[6]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[6]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[5]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[5]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[4]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[4]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[3]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[3]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[2]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[2]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[1]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[1]    ;
+; mtr_drv:mdDUT|PWM11:rightHB|count[0]    ; Merged with mtr_drv:mdDUT|PWM11:leftHB|count[0]    ;
+; inert_intf:iiDUT|timer[0]               ; Merged with piezo:pDUT|clk_cnt[0]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[0]     ; Merged with piezo:pDUT|clk_cnt[0]                  ;
+; inert_intf:iiDUT|timer[1]               ; Merged with piezo:pDUT|clk_cnt[1]                  ;
+; inert_intf:iiDUT|timer[2]               ; Merged with piezo:pDUT|clk_cnt[2]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[1]     ; Merged with piezo:pDUT|clk_cnt[1]                  ;
+; inert_intf:iiDUT|timer[3]               ; Merged with piezo:pDUT|clk_cnt[3]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[2]     ; Merged with piezo:pDUT|clk_cnt[2]                  ;
+; inert_intf:iiDUT|timer[4]               ; Merged with piezo:pDUT|clk_cnt[4]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[3]     ; Merged with piezo:pDUT|clk_cnt[3]                  ;
+; inert_intf:iiDUT|timer[5]               ; Merged with piezo:pDUT|clk_cnt[5]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[4]     ; Merged with piezo:pDUT|clk_cnt[4]                  ;
+; inert_intf:iiDUT|timer[6]               ; Merged with piezo:pDUT|clk_cnt[6]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[5]     ; Merged with piezo:pDUT|clk_cnt[5]                  ;
+; inert_intf:iiDUT|timer[7]               ; Merged with piezo:pDUT|clk_cnt[7]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[6]     ; Merged with piezo:pDUT|clk_cnt[6]                  ;
+; inert_intf:iiDUT|timer[8]               ; Merged with piezo:pDUT|clk_cnt[8]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[7]     ; Merged with piezo:pDUT|clk_cnt[7]                  ;
+; inert_intf:iiDUT|timer[9]               ; Merged with piezo:pDUT|clk_cnt[9]                  ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[8]     ; Merged with piezo:pDUT|clk_cnt[8]                  ;
+; inert_intf:iiDUT|timer[10]              ; Merged with piezo:pDUT|clk_cnt[10]                 ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[9]     ; Merged with piezo:pDUT|clk_cnt[9]                  ;
+; inert_intf:iiDUT|timer[11]              ; Merged with piezo:pDUT|clk_cnt[11]                 ;
+; mtr_drv:mdDUT|PWM11:leftHB|count[10]    ; Merged with piezo:pDUT|clk_cnt[10]                 ;
+; inert_intf:iiDUT|timer[12]              ; Merged with piezo:pDUT|clk_cnt[12]                 ;
+; inert_intf:iiDUT|timer[13]              ; Merged with piezo:pDUT|clk_cnt[13]                 ;
+; inert_intf:iiDUT|timer[14]              ; Merged with piezo:pDUT|clk_cnt[14]                 ;
+; inert_intf:iiDUT|timer[15]              ; Merged with piezo:pDUT|clk_cnt[15]                 ;
+; A2D_Intf:A2DiDUT|batt[0..10]            ; Lost fanout                                        ;
+; Auth_blk:abDUT|state.OFF                ; Lost fanout                                        ;
+; inert_intf:iiDUT|state~4                ; Lost fanout                                        ;
+; inert_intf:iiDUT|state~5                ; Lost fanout                                        ;
+; inert_intf:iiDUT|state~6                ; Lost fanout                                        ;
+; inert_intf:iiDUT|SPI_mstr16:spi|state~4 ; Lost fanout                                        ;
+; inert_intf:iiDUT|SPI_mstr16:spi|state~5 ; Lost fanout                                        ;
+; A2D_Intf:A2DiDUT|state~4                ; Lost fanout                                        ;
+; A2D_Intf:A2DiDUT|state~5                ; Lost fanout                                        ;
+; A2D_Intf:A2DiDUT|SPI_mstr16:spi|state~4 ; Lost fanout                                        ;
+; A2D_Intf:A2DiDUT|SPI_mstr16:spi|state~5 ; Lost fanout                                        ;
+; Auth_blk:abDUT|UART_rcv:RCV|state~5     ; Lost fanout                                        ;
+; steer_en:sesDUT|counter[15..25]         ; Lost fanout                                        ;
+; Total Number of Removed Registers = 89  ;                                                    ;
++-----------------------------------------+----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 391   ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 66    ;
+; Number of registers using Asynchronous Clear ; 283   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 172   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; inert_intf:iiDUT|SPI_mstr16:spi|SS_n       ; 2       ;
+; A2D_Intf:A2DiDUT|SPI_mstr16:spi|SS_n       ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[7] ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[3] ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[6] ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[5] ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[1] ; 2       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[0] ; 1       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[4] ; 4       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[2] ; 4       ;
+; Auth_blk:abDUT|UART_rcv:RCV|rx_shft_reg[8] ; 1       ;
+; Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[2]    ; 3       ;
+; Total number of inverted registers = 12    ;         ;
++--------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Segway|inert_intf:iiDUT|SPI_mstr16:spi|shft_reg[2]  ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Segway|inert_intf:iiDUT|SPI_mstr16:spi|shft_reg[12] ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Segway|A2D_Intf:A2DiDUT|SPI_mstr16:spi|shft_reg[10] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Segway|A2D_Intf:A2DiDUT|SPI_mstr16:spi|shft_reg[13] ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |Segway|balance_cntrl:bcDUT|rght_shaped_ff[6]        ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |Segway|balance_cntrl:bcDUT|lft_shaped_ff[13]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Segway|Auth_blk:abDUT|UART_rcv:RCV|bit_cnt[1]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Segway|A2D_Intf:A2DiDUT|counter[0]                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Segway|Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[6]      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Segway|balance_cntrl:bcDUT|ptch_err_sat_ff[9]       ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |Segway|steer_en:sesDUT|counter[2]                   ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |Segway|balance_cntrl:bcDUT|integrator[14]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Segway|Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[9]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Segway|balance_cntrl:bcDUT|ptch_D_term[11]          ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |Segway|balance_cntrl:bcDUT|rght_spd[7]              ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |Segway|balance_cntrl:bcDUT|lft_spd[2]               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Segway|Auth_blk:abDUT|Selector3                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: steer_en:sesDUT ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; fast_sim       ; 1     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: balance_cntrl:bcDUT ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; fast_sim       ; 1     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                      ;
++------------------------------------------------+--------------+-------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                            ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                   ;
+; LPM_WIDTHB                                     ; 10           ; Untyped                                   ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                   ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                   ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                   ;
+; LATENCY                                        ; 0            ; Untyped                                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                   ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                   ;
+; USE_EAB                                        ; OFF          ; Untyped                                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                   ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                   ;
++------------------------------------------------+--------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                   ;
++---------------------------------------+----------------------------------------------------------+
+; Name                                  ; Value                                                    ;
++---------------------------------------+----------------------------------------------------------+
+; Number of entity instances            ; 1                                                        ;
+; Entity Instance                       ; inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                                       ;
+;     -- LPM_WIDTHB                     ; 10                                                       ;
+;     -- LPM_WIDTHP                     ; 26                                                       ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                      ;
+;     -- USE_EAB                        ; OFF                                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                       ;
++---------------------------------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:iiDUT|SPI_mstr16:spi"                                                              ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; cmd[3..2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[14]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[7]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rd_data[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "A2D_Intf:A2DiDUT|SPI_mstr16:spi"                                                               ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; rd_data[15..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 391                         ;
+;     CLR               ; 87                          ;
+;     CLR SCLR          ; 15                          ;
+;     CLR SLD           ; 10                          ;
+;     ENA               ; 1                           ;
+;     ENA CLR           ; 171                         ;
+;     SLD               ; 56                          ;
+;     plain             ; 51                          ;
+; cycloneiii_lcell_comb ; 920                         ;
+;     arith             ; 468                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 170                         ;
+;         3 data inputs ; 297                         ;
+;     normal            ; 452                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 58                          ;
+;         3 data inputs ; 112                         ;
+;         4 data inputs ; 255                         ;
+;                       ;                             ;
+; Max LUT depth         ; 16.20                       ;
+; Average LUT depth     ; 6.05                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Mon Dec 10 10:36:05 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Segway -c Segway
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file spi_mstr16.sv
+    Info (12023): Found entity 1: SPI_mstr16 File: I:/ECE551/FinalProject/SPI_mstr16.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segway.v
+    Info (12023): Found entity 1: Segway File: I:/ECE551/FinalProject/Segway.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file balance_cntrl.sv
+    Info (12023): Found entity 1: balance_cntrl File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 1
+Info (12127): Elaborating entity "Segway" for the top level hierarchy
+Warning (12125): Using design file auth_blk.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Auth_blk File: I:/ECE551/FinalProject/auth_blk.sv Line: 1
+Info (12128): Elaborating entity "Auth_blk" for hierarchy "Auth_blk:abDUT" File: I:/ECE551/FinalProject/Segway.v Line: 81
+Warning (12125): Using design file uart_rcv.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: UART_rcv File: I:/ECE551/FinalProject/uart_rcv.sv Line: 1
+Info (12128): Elaborating entity "UART_rcv" for hierarchy "Auth_blk:abDUT|UART_rcv:RCV" File: I:/ECE551/FinalProject/auth_blk.sv Line: 15
+Warning (10230): Verilog HDL assignment warning at uart_rcv.sv(47): truncated value with size 32 to match size of target (4) File: I:/ECE551/FinalProject/uart_rcv.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at uart_rcv.sv(52): truncated value with size 32 to match size of target (12) File: I:/ECE551/FinalProject/uart_rcv.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at uart_rcv.sv(63): truncated value with size 32 to match size of target (12) File: I:/ECE551/FinalProject/uart_rcv.sv Line: 63
+Warning (12125): Using design file a2d_intf.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: A2D_Intf File: I:/ECE551/FinalProject/a2d_intf.sv Line: 1
+Info (12128): Elaborating entity "A2D_Intf" for hierarchy "A2D_Intf:A2DiDUT" File: I:/ECE551/FinalProject/Segway.v Line: 85
+Info (12128): Elaborating entity "SPI_mstr16" for hierarchy "A2D_Intf:A2DiDUT|SPI_mstr16:spi" File: I:/ECE551/FinalProject/a2d_intf.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at SPI_mstr16.sv(123): truncated value with size 32 to match size of target (5) File: I:/ECE551/FinalProject/SPI_mstr16.sv Line: 123
+Warning (12125): Using design file inert_intf.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: inert_intf File: I:/ECE551/FinalProject/inert_intf.sv Line: 1
+Info (12128): Elaborating entity "inert_intf" for hierarchy "inert_intf:iiDUT" File: I:/ECE551/FinalProject/Segway.v Line: 88
+Info (10264): Verilog HDL Case Statement information at inert_intf.sv(54): all case item expressions in this case statement are onehot File: I:/ECE551/FinalProject/inert_intf.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at inert_intf.sv(173): truncated value with size 32 to match size of target (16) File: I:/ECE551/FinalProject/inert_intf.sv Line: 173
+Warning (12125): Using design file inertial_integrator.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: inertial_integrator File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 2
+Info (12128): Elaborating entity "inertial_integrator" for hierarchy "inert_intf:iiDUT|inertial_integrator:inrt" File: I:/ECE551/FinalProject/inert_intf.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at inertial_integrator.sv(23): truncated value with size 32 to match size of target (27) File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at inertial_integrator.sv(28): truncated value with size 32 to match size of target (27) File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 28
+Warning (12125): Using design file steer_en.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: steer_en File: I:/ECE551/FinalProject/steer_en.sv Line: 1
+Info (12128): Elaborating entity "steer_en" for hierarchy "steer_en:sesDUT" File: I:/ECE551/FinalProject/Segway.v Line: 91
+Warning (10230): Verilog HDL assignment warning at steer_en.sv(133): truncated value with size 32 to match size of target (26) File: I:/ECE551/FinalProject/steer_en.sv Line: 133
+Info (12128): Elaborating entity "balance_cntrl" for hierarchy "balance_cntrl:bcDUT" File: I:/ECE551/FinalProject/Segway.v Line: 96
+Warning (10230): Verilog HDL assignment warning at balance_cntrl.sv(159): truncated value with size 17 to match size of target (16) File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 159
+Warning (10230): Verilog HDL assignment warning at balance_cntrl.sv(167): truncated value with size 32 to match size of target (16) File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 167
+Warning (10230): Verilog HDL assignment warning at balance_cntrl.sv(168): truncated value with size 32 to match size of target (16) File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 168
+Warning (10230): Verilog HDL assignment warning at balance_cntrl.sv(174): truncated value with size 32 to match size of target (16) File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 174
+Warning (10230): Verilog HDL assignment warning at balance_cntrl.sv(181): truncated value with size 32 to match size of target (16) File: I:/ECE551/FinalProject/balance_cntrl.sv Line: 181
+Warning (12125): Using design file mtr_drv.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mtr_drv File: I:/ECE551/FinalProject/mtr_drv.sv Line: 1
+Info (12128): Elaborating entity "mtr_drv" for hierarchy "mtr_drv:mdDUT" File: I:/ECE551/FinalProject/Segway.v Line: 102
+Warning (12125): Using design file pwm11.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PWM11 File: I:/ECE551/FinalProject/pwm11.sv Line: 1
+Info (12128): Elaborating entity "PWM11" for hierarchy "mtr_drv:mdDUT|PWM11:rightHB" File: I:/ECE551/FinalProject/mtr_drv.sv Line: 15
+Warning (10230): Verilog HDL assignment warning at pwm11.sv(9): truncated value with size 32 to match size of target (11) File: I:/ECE551/FinalProject/pwm11.sv Line: 9
+Warning (12125): Using design file piezo.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: piezo File: I:/ECE551/FinalProject/piezo.sv Line: 2
+Info (12128): Elaborating entity "piezo" for hierarchy "piezo:pDUT" File: I:/ECE551/FinalProject/Segway.v Line: 107
+Warning (10858): Verilog HDL warning at piezo.sv(32): object clk_clr used but never assigned File: I:/ECE551/FinalProject/piezo.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at piezo.sv(86): truncated value with size 32 to match size of target (28) File: I:/ECE551/FinalProject/piezo.sv Line: 86
+Warning (10030): Net "clk_clr" at piezo.sv(32) has no driver or initial value, using a default initial value '0' File: I:/ECE551/FinalProject/piezo.sv Line: 32
+Warning (12125): Using design file rst_synch.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: rst_synch File: I:/ECE551/FinalProject/rst_synch.sv Line: 1
+Info (12128): Elaborating entity "rst_synch" for hierarchy "rst_synch:iRST" File: I:/ECE551/FinalProject/Segway.v Line: 116
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "inert_intf:iiDUT|inertial_integrator:inrt|Mult0" File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 23
+Info (12130): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 23
+Info (12133): Instantiated megafunction "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" with the following parameter: File: I:/ECE551/FinalProject/inertial_integrator.sv Line: 23
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "26"
+    Info (12134): Parameter "LPM_WIDTHR" = "26"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ekh.tdf
+    Info (12023): Found entity 1: add_sub_ekh File: I:/ECE551/FinalProject/db/add_sub_ekh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k9h.tdf
+    Info (12023): Found entity 1: add_sub_k9h File: I:/ECE551/FinalProject/db/add_sub_k9h.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ikh.tdf
+    Info (12023): Found entity 1: add_sub_ikh File: I:/ECE551/FinalProject/db/add_sub_ikh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "inert_intf:iiDUT|inertial_integrator:inrt|lpm_mult:Mult0" File: c:/programdata/app-v/cfe345e7-b20f-4013-ab10-0350f684dc77/c3446511-ec8f-4614-85f4-05df449d03f2/root/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (13000): Registers with preset signals will power-up high File: I:/ECE551/FinalProject/SPI_mstr16.sv Line: 10
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]~1" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]~5" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[9]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[9]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]~1" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[8]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[8]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]~5" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[5]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[5]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]~1" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[4]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[4]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]~5" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[3]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[3]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[11]~1" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+    Warning (13310): Register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[1]" is converted into an equivalent circuit using register "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[1]~_emulated" and latch "Auth_blk:abDUT|UART_rcv:RCV|baud_cnt[10]~5" File: I:/ECE551/FinalProject/uart_rcv.sv Line: 60
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[0]" is stuck at VCC File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[1]" is stuck at GND File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[2]" is stuck at VCC File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[3]" is stuck at GND File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[4]" is stuck at VCC File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[5]" is stuck at GND File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[6]" is stuck at VCC File: I:/ECE551/FinalProject/Segway.v Line: 13
+    Warning (13410): Pin "LED[7]" is stuck at GND File: I:/ECE551/FinalProject/Segway.v Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 33 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file I:/ECE551/FinalProject/Segway.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1047 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 20 output pins
+    Info (21061): Implemented 1021 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 5047 megabytes
+    Info: Processing ended: Mon Dec 10 10:36:33 2018
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:32
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in I:/ECE551/FinalProject/Segway.map.smsg.
+
+

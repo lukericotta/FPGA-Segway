@@ -1,0 +1,695 @@
+# Compile of A2D_Intf.sv was successful.
+# Compile of ADC128S.sv was successful.
+# Compile of Auth_blk.sv was successful.
+# Compile of balance_cntrl.sv was successful.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful.
+# Compile of mtr_drv.sv was successful.
+# Compile of Piezo.sv was successful.
+# Compile of Segway.v was successful.
+# Compile of Segway_tb.sv was successful.
+# Compile of SegwayModel.sv was successful with warnings.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of steer_en_SM_shell.sv was successful.
+# Compile of tb_tasks.v was successful.
+# Compile of UART_tx.sv was successful.
+# Compile of UART_rcv.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of PWM11.sv was successful.
+# Compile of SPI_mstr16.sv was successful.
+# 19 compiles, 0 failed with no errors.
+vsim -gui -novopt work.Segway_tb
+# vsim -gui 
+# Start time: 14:25:40 on Dec 08,2018
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Refreshing I:/ECE551/FinalProject/work.SegwayModel
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Refreshing I:/ECE551/FinalProject/work.SPI_ADC128S
+# Loading work.SPI_ADC128S
+# Refreshing I:/ECE551/FinalProject/work.Segway
+# Loading work.Segway
+# Refreshing I:/ECE551/FinalProject/work.Auth_blk
+# Loading work.Auth_blk
+# Refreshing I:/ECE551/FinalProject/work.UART_rcv
+# Loading work.UART_rcv
+# Refreshing I:/ECE551/FinalProject/work.A2D_Intf
+# Loading work.A2D_Intf
+# Refreshing I:/ECE551/FinalProject/work.SPI_mstr16
+# Loading work.SPI_mstr16
+# Refreshing I:/ECE551/FinalProject/work.inert_intf
+# Loading work.inert_intf
+# Refreshing I:/ECE551/FinalProject/work.inertial_integrator
+# Loading work.inertial_integrator
+# Refreshing I:/ECE551/FinalProject/work.steer_en
+# Loading work.steer_en
+# Refreshing I:/ECE551/FinalProject/work.balance_cntrl
+# Loading work.balance_cntrl
+# Refreshing I:/ECE551/FinalProject/work.mtr_drv
+# Loading work.mtr_drv
+# Refreshing I:/ECE551/FinalProject/work.PWM11
+# Loading work.PWM11
+# Refreshing I:/ECE551/FinalProject/work.piezo
+# Loading work.piezo
+# Refreshing I:/ECE551/FinalProject/work.reset_synch
+# Loading work.reset_synch
+# Refreshing I:/ECE551/FinalProject/work.UART_tx
+# Loading work.UART_tx
+add wave -position insertpoint sim:/Segway_tb/iADC/*
+add wave -position insertpoint sim:/Segway_tb/iDUT/*
+add wave -position insertpoint sim:/Segway_tb/iDUT/A2DiDUT/*
+run -all
+#           1
+#           1/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 4000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 40000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+add wave -position insertpoint sim:/Segway_tb/iDUT/A2DiDUT/spi/*
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 40000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of A2D_Intf.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Refreshing I:/ECE551/FinalProject/work.A2D_Intf
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 40000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of Segway_tb.sv was successful.
+run -all
+# Break key hit
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 157
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           1
+#           1/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 4000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of A2D_Intf.sv was successful.
+# Compile of Segway_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Refreshing I:/ECE551/FinalProject/work.A2D_Intf
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           1
+#           1/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 4000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/theta_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/rider_lean
+run
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           1
+#           1/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 4000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          4
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(152)
+#    Time: 25000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 152
+# Compile of ADC128S.sv was successful.
+# Compile of Segway_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(151)
+#    Time: 31000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 151
+# Compile of ADC128S.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(151)
+#    Time: 31000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 151
+add wave -position insertpoint sim:/Segway_tb/*
+add wave -position insertpoint sim:/Segway_tb/iDUT/*
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(151)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 151
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(151)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 151
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           1
+#           1/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of Segway_tb.sv was successful.
+run -all
+# Break key hit
+# Break in Module UART_tx at I:/ECE551/FinalProject/UART_tx.sv line 67
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           1
+#           1/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+add wave -position insertpoint sim:/Segway_tb/iDUT/*
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of ADC128S.sv was successful.
+run -all
+# Break key hit
+# Break in Module ADC128S at I:/ECE551/FinalProject/ADC128S.sv line 47
+restart
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of ADC128S.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Compile of ADC128S.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Refreshing I:/ECE551/FinalProject/work.ADC128S
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+add wave -position insertpoint sim:/Segway_tb/iADC/*
+add wave -position insertpoint sim:/Segway_tb/iADC/iSPI/*
+restart
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(154)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 154
+# Causality operation skipped due to absence of debug database file
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing I:/ECE551/FinalProject/work.Segway_tb
+# Loading sv_std.std
+# Loading work.Segway_tb
+# Loading work.SegwayModel
+# Loading work.ADC128S
+# Loading work.SPI_ADC128S
+# Loading work.Auth_blk
+# Loading work.UART_rcv
+# Loading work.A2D_Intf
+# Loading work.SPI_mstr16
+# Loading work.inert_intf
+# Loading work.inertial_integrator
+# Loading work.steer_en
+# Loading work.balance_cntrl
+# Loading work.mtr_drv
+# Loading work.PWM11
+# Loading work.piezo
+# Loading work.reset_synch
+# Loading work.UART_tx
+run -all
+#           0/          1
+# ** Note: $stop    : I:/ECE551/FinalProject/Segway_tb.sv(158)
+#    Time: 10000035 ps  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at I:/ECE551/FinalProject/Segway_tb.sv line 158
+# End time: 17:22:22 on Dec 08,2018, Elapsed time: 2:56:42
+# Errors: 8, Warnings: 23

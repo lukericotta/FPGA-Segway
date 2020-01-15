@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -9.999
+TNS   : -1282.779
+
+Type  : Slow 1200mV 85C Model Setup 'rst_synch:iRST|rst_n'
+Slack : -0.943
+TNS   : -1.880
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'rst_synch:iRST|rst_n'
+Slack : 0.649
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'clk'
+Slack : -0.019
+TNS   : -4.413
+
+Type  : Slow 1200mV 85C Model Removal 'clk'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -394.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'rst_synch:iRST|rst_n'
+Slack : 0.444
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -8.793
+TNS   : -1109.919
+
+Type  : Slow 1200mV 0C Model Setup 'rst_synch:iRST|rst_n'
+Slack : -0.767
+TNS   : -1.520
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.264
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'rst_synch:iRST|rst_n'
+Slack : 0.604
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'clk'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'clk'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -394.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'rst_synch:iRST|rst_n'
+Slack : 0.476
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -5.219
+TNS   : -574.017
+
+Type  : Fast 1200mV 0C Model Setup 'rst_synch:iRST|rst_n'
+Slack : -0.009
+TNS   : -0.012
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'rst_synch:iRST|rst_n'
+Slack : 0.239
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'clk'
+Slack : 0.058
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'clk'
+Slack : 0.103
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -503.626
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'rst_synch:iRST|rst_n'
+Slack : 0.427
+TNS   : 0.000
+
+------------------------------------------------------------

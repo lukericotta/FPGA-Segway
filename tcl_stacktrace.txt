@@ -1,0 +1,13 @@
+Tue Dec 04 18:37:05 CST 2018
+Trace back: invalid command name ".main_pane.source.interior.cs.body.srcobj.sci"
+    while executing
+"$w tag remove sel $last end"
+    (procedure "TextSelectTo" line 63)
+    invoked from within
+"TextSelectTo $w $Priv(x) $Priv(y)"
+    (procedure "tk::TextAutoScan" line 15)
+    invoked from within
+"tk::TextAutoScan .main_pane.source.interior.cs.body.srcobj.sci"
+    (command bound to event)
+  <2:C:/ProgramData/App-V/CFE345E7-B20F-4013-AB10-0350F684DC77/C3446511-EC8F-4614-85F4-05DF449D03F2/Root/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {invalid command name ".main_pane.source.interior.cs.body.srcobj.sci"}
+  <1:eval:1: ::tk::dialog::error::bgerror {invalid command name ".main_pane.source.interior.cs.body.srcobj.sci"}
