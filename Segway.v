@@ -33,7 +33,8 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   // You will need to declare a bunch more interanl signals to hook up everything
   wire vld;
   wire [15:0] ptch;
-  wire [11:0] ld_cell_diff, ld_cell_sum;
+  wire [11:0] ld_cell_diff;
+  wire [11:0] ld_cell_diffx, ld_cell_sum;
   wire nxt;	//WHERE DOES THIS COME FROM
  // wire diff_gt_eigth, diff_gt_15_16, sum_lt_min, sum_gt_min, tmr_full, clr_tmr, too_fast;		// !!!???WHHERE ARE THES COMING FROM/GOING TO!!!??? ---- clr_tmr, too_fast, tmr_full
   wire too_fast;
@@ -51,7 +52,8 @@ module Segway(clk,RST_n,LED,INERT_SS_n,INERT_MOSI,
   assign nxt = vld; 	//
   
   /////////////////////////////////////////
-  assign ld_cell_diff = lft_ld - rght_ld;
+  assign ld_cell_diffx = lft_ld - rght_ld;
+  assign ld_cell_diff = (ld_cell_diffx < 0) ? -ld_cell_diffx : ld_cell_diffx;
   assign ld_cell_sum = lft_ld + rght_ld;
 //  
 

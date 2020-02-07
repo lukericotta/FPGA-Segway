@@ -90,14 +90,14 @@ module steer_en #(parameter fast_sim=0)
 			if(sum_lt_min_ff) begin	//sum_lt_min replaces ~sum_gt_min
 				nxt_state = IDLE;
 				rider_off = 1'b1; end
+			else if(tmr_full) begin
+				en_steer = 1'b1;
+				nxt_state = STEER_EN; end
 			else if(diff_gt_eigth_ff) begin
 				nxt_state = WAIT;
 				clr_tmr = 1'b1; end
 //			else if(!diff_gt_eigth_ff)			//This is covered in the else
 //				nxt_state = WAIT;
-			else if(tmr_full) begin
-				en_steer = 1'b1;
-				nxt_state = STEER_EN; end
 			else
 				nxt_state = WAIT;
 

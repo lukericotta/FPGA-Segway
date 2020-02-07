@@ -6,15 +6,15 @@ Report : timing
         -max_paths 1
 Design : Segway
 Version: N-2017.09-SP5
-Date   : Mon Dec 10 19:48:47 2018
+Date   : Sun Dec 16 22:49:08 2018
 ****************************************
 
 Operating Conditions: NCCOM   Library: tcbn40lpbwptc
 Wire Load Model Mode: segmented
 
-  Startpoint: A2DiDUT/spi/shft_reg_reg[14]
+  Startpoint: abDUT/state_reg[0]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: A2DiDUT/spi/shft_reg_reg[15]
+  Endpoint: abDUT/state_reg[0]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -24,27 +24,27 @@ Wire Load Model Mode: segmented
   Segway             TSMC32K_Lowk_Conservative
                                            tcbn40lpbwptc
 
-  Point                                                   Incr       Path
-  --------------------------------------------------------------------------
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             0.00       0.00
-  A2DiDUT/spi/shft_reg_reg[14]/CP (DFCNQD2BWP)            0.00       0.00 r
-  A2DiDUT/spi/shft_reg_reg[14]/Q (DFCNQD2BWP)             0.13       0.13 f
-  U2762/Z (AO22D2BWP)                                     0.05       0.18 f
-  A2DiDUT/spi/shft_reg_reg[15]/D (DFCNQD2BWP)             0.00       0.18 f
-  data arrival time                                                  0.18
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  abDUT/state_reg[0]/CP (DFCNQD1BWP)       0.00       0.00 r
+  abDUT/state_reg[0]/Q (DFCNQD1BWP)        0.14       0.14 r
+  U2993/ZN (OAI21D1BWP)                    0.03       0.18 f
+  abDUT/state_reg[0]/D (DFCNQD1BWP)        0.00       0.18 f
+  data arrival time                                   0.18
 
-  clock clk (rise edge)                                   0.00       0.00
-  clock network delay (ideal)                             0.00       0.00
-  clock uncertainty                                       0.15       0.15
-  A2DiDUT/spi/shft_reg_reg[15]/CP (DFCNQD2BWP)            0.00       0.15 r
-  library hold time                                       0.03       0.18
-  data required time                                                 0.18
-  --------------------------------------------------------------------------
-  data required time                                                 0.18
-  data arrival time                                                 -0.18
-  --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.15       0.15
+  abDUT/state_reg[0]/CP (DFCNQD1BWP)       0.00       0.15 r
+  library hold time                        0.03       0.18
+  data required time                                  0.18
+  -----------------------------------------------------------
+  data required time                                  0.18
+  data arrival time                                  -0.18
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
 
 
 1

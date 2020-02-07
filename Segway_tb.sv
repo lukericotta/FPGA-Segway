@@ -78,27 +78,36 @@ initial begin
 
   clk = 1'b0;
   RST_n = 1'b0;
-  rider_lean = 16'h0000;
+  rider_lean = 16'h1FFF;
   send_cmd = 1'b0;
+  lft_ld_stim = 12'h500;
+  rght_ld_stim = 12'h250;
   cmd = 8'h00;
   repeat(2) @(posedge clk);
   @(negedge clk);
   RST_n = 1'b1;
-  
+  send_cmd = 1'b1;
+  cmd = 8'h67;
+  @(posedge cmd_sent);
+  send_cmd = 1'b0;
 
-  @(posedge clk);
+  repeat(1000000)@(posedge clk);
 
   send_cmd = 1'b1;
   cmd = 8'h67;
   @(posedge cmd_sent);
   send_cmd = 1'b0;
- /* repeat(100000) @(posedge clk);
+  repeat(100000) @(posedge clk);
   rider_lean = 16'h1fff;
   repeat(1000000) @(posedge clk);
   rider_lean = 16'h0000;
   repeat(1000000) @(posedge clk);
-*/
-  
+
+  send_cmd = 1'b1;
+  cmd = 8'h73;
+  @(posedge cmd_sent);
+
+  send_cmd = 1'b0;
   count = 0;
   count_all = 0;
 
@@ -115,7 +124,7 @@ initial begin
   //test battery high signal
   send_cmd = 1'b1;
   cmd = 8'h67;
-  @(posedge clk);
+  @(posedge cmd_sent);
   send_cmd = 1'b0;
   lft_ld_stim = 12'h250;
   rght_ld_stim = 12'h250;
@@ -156,7 +165,15 @@ initial begin
   
 
   
-  
+   ///////////////4.1////////////////// should be moving too fast
+  batt_stim = 12'h700;
+  lft_ld_stim = 12'h201;
+  rght_ld_stim = 12'h201;
+  rider_lean = 16'h1FFe;
+  count_all = count_all + 1;
+  repeat(100000) @(posedge clk);		//make sure ths wait is LOW enough
+  if(iDUT.pDUT.ovr_spd) begin		//should be high
+	$display("%d passed", count_all); count = count + 1; end
   
   
 ///////////////////////////////////////////////////////////////////////////////////
@@ -239,7 +256,7 @@ initial begin
   lft_ld_stim = 12'h000;
   rght_ld_stim = 12'h000;
   count_all = count_all + 1;
-  repeat(1000000) @(posedge clk);
+  repeat(500000) @(posedge clk);
   if(iDUT.rider_off) begin
 	$display("%d passed", count_all); count = count + 1; end
 
@@ -248,7 +265,7 @@ initial begin
   lft_ld_stim = 12'h201;
   rght_ld_stim = 12'h201;
   count_all = count_all + 1;
-  repeat(1000000) @(posedge clk);
+  repeat(500000) @(posedge clk);
   if(!iDUT.rider_off) begin
 	$display("%d passed", count_all); count = count + 1; end
 
@@ -304,7 +321,7 @@ initial begin
   lft_ld_stim = 12'h250;
   rght_ld_stim = 12'h250;
   rider_lean = 16'h2000;
-  repeat(1000000) @(posedge clk);
+  repeat(500000) @(posedge clk);
 //now should be in PWR1, and theta_platform, omega_platform, and net_torque should all converge
   if(iDUT.pwr_up && !iDUT.rider_off && (iPHYS.net_torque > -3000 && iPHYS.net_torque < 3000) && (iPHYS.omega_platform > -3000 && iPHYS.omega_platform < 3000) && (iPHYS.theta_platform > -3000 && iPHYS.theta_platform < 3000)) begin
 	$display("%d passed", count_all); count = count + 1; end

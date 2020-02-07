@@ -25,9 +25,12 @@ set_load 0.1 [all_outputs]
 set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
 set_max_transition 0.1 [current_design]
 
+set compile_seqmap_enable_output_inversion true
 #compile
-compile_ultra -area_high_effort_script
+#compile_ultra -area_high_effort_script
+compile -area_effort high
 
+set compile_seqmap_enable_output_inversion true
 set_clock_uncertainty 0.15 clk
 set_fix_hold clk
 
@@ -35,6 +38,7 @@ ungroup -all -flatten
 
 #compile
 compile -area_effort high
+set compile_seqmap_enable_output_inversion true
 
 #Analyzing Results
 report_timing -delay max > Segway_max_delay.rpt
